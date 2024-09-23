@@ -58,9 +58,18 @@ Similarly for `QuickSortPersons.cpp`:
 g++ QuickSortPersons.cpp -o quicksort_persons
 ./quicksort_persons
 ```
+---
 
 ## Notes
-- The QuickSort algorithm has an average time complexity of O(n log n), but in the worst case, it can degrade to O(n²) if the pivot selection is poor.
-- In `QuickSortPersons.cpp`, sorting by different attributes can be controlled using a boolean flag (e.g., `byAge` to sort by age).
 
----
+- **Comparison of QuickSort performance with other algorithms**:
+    - **QuickSort** has an average performance of O(n log n), but in the worst case, it can degrade to O(n²) when the pivot is not chosen appropriately.
+    - **MergeSort** always has a time complexity of O(n log n), regardless of the data set, but it requires additional memory due to the creation of subarrays.
+    - **Insertion Sort** and **Selection Sort** are less efficient with a time complexity of O(n²), but **Insertion Sort** performs better on nearly sorted or small datasets.
+
+- **Pivot selection strategies in QuickSort**:
+    - Testing the implementation with different pivot selection strategies (first element, last element, random, or median-of-three) shows how each method impacts performance on various types of data sets.
+    - Choosing the **first** or **last element** as the pivot can lead to poor performance (O(n²)) on already sorted or reverse-sorted data.
+    - A **random pivot** or **median-of-three** strategy generally improves performance by reducing the likelihood of encountering the worst-case scenario, leading to more consistent O(n log n) behavior across different data types.
+    - In `QuickSortPersons.cpp`, sorting by different attributes can be controlled using a boolean flag (e.g., `byAge` to sort by age).
+--- 
